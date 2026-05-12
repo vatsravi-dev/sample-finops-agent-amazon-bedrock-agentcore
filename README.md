@@ -344,6 +344,8 @@ For any feedback, questions, or suggestions, use the [Issues](https://github.com
 
 ## Authors
 
-- **Salman Ahmed** — Senior Technical Account Manager, AWS
-- **Ravi Kumar** — Senior Technical Account Manager, AWS
-- **Sergio Barraza** — Senior Technical Account Manager, AWS
+**Ravi Kumar** – Ravi is a Senior Technical Account Manager in AWS Enterprise Support who helps customers in the travel and hospitality industry to streamline their cloud operations on AWS. He is a results-driven IT professional with over 20 years of experience. Ravi is passionate about generative AI and actively explores its applications in cloud computing. In his free time, Ravi enjoys creative activities like painting. He also likes playing cricket and traveling to new places.
+
+**Salman Ahmed** – Salman is a Senior Technical Account Manager at AWS. He specializes in guiding customers through the design, implementation, and support of AWS solutions. Combining his networking expertise with a drive to explore new technologies, he helps organizations successfully navigate their cloud journey. Outside of work, he enjoys photography, traveling, and watching his favorite sports teams.
+
+**Sergio Barraza** – Sergio is a Senior Technical Account Manager at AWS, helping customers on designing and optimizing cloud solutions. With more than 25 years in software development, he guides customers through AWS services adoption. Outside of work, Sergio is a multi-instrument musician playing guitar, piano, and drums, and he also practices Wing Chun Kung-Fu.
