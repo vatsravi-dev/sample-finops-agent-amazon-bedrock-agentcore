@@ -37,20 +37,20 @@ if (!adminEmail) {
 // Stack 1: Image Stack - Builds Docker images for Agent Runtimes
 const imageStack = new ImageStack(app, 'FinOpsImageStack', {
   env,
-  description: 'FinOps Agent - Docker Image Build (ECR + CodeBuild)',
+  description: 'FinOps Agent - Docker Image Build (ECR + CodeBuild) (SO9696)',
 });
 
 // Stack 2: Auth Stack - Cognito + M2M + OAuth Provider (Custom Resource)
 const authStack = new AuthStack(app, 'FinOpsAuthStack', {
   env,
-  description: 'FinOps Agent - Cognito Authentication + OAuth Provider',
+  description: 'FinOps Agent - Cognito Authentication + OAuth Provider (SO9696)',
   adminEmail: adminEmail,
 });
 
 // Stack 3: MCP Runtime Stack - Deploy 2 MCP Runtimes with JWT auth
 const mcpRuntimeStack = new MCPRuntimeStack(app, 'FinOpsMCPRuntimeStack', {
   env,
-  description: 'FinOps Agent - MCP Server Runtimes (Billing + Pricing) with JWT Authorization',
+  description: 'FinOps Agent - MCP Server Runtimes (Billing + Pricing) with JWT Authorization (SO9696)',
   billingMcpRepository: imageStack.billingMcpRepository,
   pricingMcpRepository: imageStack.pricingMcpRepository,
   userPoolId: authStack.userPoolId,
@@ -62,7 +62,7 @@ mcpRuntimeStack.addDependency(authStack);
 // Stack 4: AgentCore Gateway Stack - Gateway + its own Cognito + OAuth provider + MCP targets
 const agentCoreGatewayStack = new AgentCoreGatewayStack(app, 'FinOpsAgentCoreGatewayStack', {
   env,
-  description: 'FinOps Agent - Gateway with MCP Server Targets',
+  description: 'FinOps Agent - Gateway with MCP Server Targets (SO9696)',
   billingMcpRuntimeArn: mcpRuntimeStack.billingMcpRuntimeArn,
   pricingMcpRuntimeArn: mcpRuntimeStack.pricingMcpRuntimeArn,
   billingMcpRuntimeEndpoint: mcpRuntimeStack.billingMcpRuntimeEndpoint,
@@ -78,7 +78,7 @@ agentCoreGatewayStack.addDependency(authStack);
 // Stack 5: Main Runtime Stack - Main agent runtime with Gateway ARN
 const agentRuntimeStack = new AgentRuntimeStack(app, 'FinOpsAgentRuntimeStack', {
   env,
-  description: 'FinOps Agent - Main Agent Runtime with Gateway Integration',
+  description: 'FinOps Agent - Main Agent Runtime with Gateway Integration (SO9696)',
   repository: imageStack.repository,
   userPoolArn: authStack.userPoolArn,
   gatewayArn: agentCoreGatewayStack.gatewayArn,
